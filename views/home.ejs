@@ -20,18 +20,10 @@
 <body>
     <%- include('./partials/nav.ejs') %>
     <div class="gallery-body">
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
-        <%- include('./partials/card.ejs') %>
+        <% Entries.forEach(entry => { %>
+            <%- include('./partials/card.ejs', {entry}) %>
+        <% }); %>
+
     </div>
 </body>
 </html>
