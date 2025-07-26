@@ -9,19 +9,25 @@ mongoose.connect(dbURI)
 .then(() => app.listen(3000))
 .catch(err => console.log(err));
 
-//testing mongoose
-// new Entry({
-//     name: 'Purple Swirls',
-//     url: 'https://i.pinimg.com/736x/2a/74/f3/2a74f3ba201413b79ead824681b7a5d6.jpg'
-// }).save()
-// .then(res => console.log(res))
-// .catch(err => console.log(err));
-
 
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.get('/', (req , res) => {
     Entry.find()
     .then(Entries => res.render('home', {Entries}));
+})
+
+app.get('/upload', (req, res) => {
+    res.render('upload');
+})
+
+app.post('/upload', (req,res) => {
+    const {name , url} = req.body;
+    const uploadItem = new Entry({name , url})
+
+    uploadItem.save()
+    .then(() => res.redirect('/'))
+    .catch(err => console.log(err));
 })
