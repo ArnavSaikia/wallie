@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Wallpaper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html{
+            height: 100%;
+        }
+
+        body{
+            min-height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="/styles/nav.css">
+    <link rel="stylesheet" href="/styles/upload.css">
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
     <div class="upload-body">
-        <form action="/upload" method="POST">
+        <img src="template.jpg">
+        <form class="form" action="/upload" method="POST">
             <input type="text" name="name" placeholder="Enter a desired name">
             <input type="url" name="url" placeholder="Enter the URL" required>
             <button type="submit">Submit</button>

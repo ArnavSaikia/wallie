@@ -25,19 +25,39 @@ nav div img{
 
 nav div span{
     font-size: 1rem;
-    color: rgb(169, 168, 168);
+    color: #F5EBDD;
 }
 
 nav div input{
     border: none;
     border-radius: 1.5rem;
-    background-color: rgba(29, 29, 29, 0.559);
-    color: rgb(169, 168, 168);
+    background-color: 	#4A2A2A;
+    color: #EFE7DC;
     height: 70%;
     padding-left: 1rem;
     margin-right: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 nav div input:focus{
     outline: none;
+}
+
+nav div input::placeholder{
+    color: 	#B7A9A3;
+}
+
+nav div button{
+    background-color: #5A1E1E;
+    color: #F5EBDD;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+nav div button:nth-of-type(1){
+    margin-right: 0.5rem;
 }
