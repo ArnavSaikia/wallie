@@ -61,3 +61,7 @@ nav div button{
 nav div button:nth-of-type(1){
     margin-right: 0.5rem;
 }
+
+nav div a{
+    all:unset;
+}

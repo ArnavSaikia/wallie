@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Entry = require('./models/entries');
+const Favourite = require('./models/favourites.js');
 
 const app = express();
 
@@ -31,3 +32,7 @@ app.post('/upload', (req,res) => {
     .then(() => res.redirect('/'))
     .catch(err => console.log(err));
 })
+
+app.post('/liked', (req,res) => {
+    
+});
