@@ -31,5 +31,22 @@
         <% }); %>
 
     </div>
+
+
+
+    <script>
+        function addToLiked(name,url){
+            const uploadObject = {name,url};
+            fetch('/liked', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(uploadObject)
+            })
+            .then(res => console.log("successfully uploaded"))
+            .catch(err => console.log(err));
+        }
+    </script>
 </body>
 </html>

@@ -12,6 +12,7 @@ mongoose.connect(dbURI)
 
 
 app.set('view engine', 'ejs');
+app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
@@ -33,6 +34,16 @@ app.post('/upload', (req,res) => {
     .catch(err => console.log(err));
 })
 
+app.get('/liked', (req,res) => {
+    Favourite.find()
+    .then(Entries => res.render('home', {Entries}));
+});
+
 app.post('/liked', (req,res) => {
-    
+    const {name , url} = req.body;
+    const uploadItem = new Favourite({name , url})
+
+    uploadItem.save()
+    .then(() => res.redirect('/liked'))
+    .catch(err => console.log(err));
 });
