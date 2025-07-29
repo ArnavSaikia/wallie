@@ -6,7 +6,7 @@
                 </span>
                 <div class="button-box">
                     <button onclick='addToLiked("<%- entry.name %>", "<%- entry.url %>")' class="add-to-liked"><i class="fa-solid fa-heart"></i></button>
-                    <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    <button onclick='deleteFromCollection("entries", "<%- entry._id %>")' class="delete"><i class="fa-solid fa-trash"></i></button>
                     <button class="download"><i class="fa-solid fa-download"></i></button>
                 </div>
             </div>

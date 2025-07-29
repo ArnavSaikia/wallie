@@ -47,6 +47,24 @@
             .then(res => console.log("successfully uploaded"))
             .catch(err => console.log(err));
         }
+
+        function deleteFromCollection(collection, id){
+            if(collection == "entries"){
+                fetch(`/${id}`, {method: 'DELETE'})
+                .then(res => {
+                    if (!res.ok) console.log("delete failed for " + id);
+                    window.location.href = "/";
+                })
+            }
+
+            if(collection == 'favourites'){
+                fetch(`/liked/${id}`, {method: 'DELETE'})
+                .then(res => {
+                    if (!res.ok) console.log("delete failed for " + id);
+                    window.location.href = "/";
+                })
+            }
+        }
     </script>
 </body>
 </html>

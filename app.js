@@ -21,6 +21,25 @@ app.get('/', (req , res) => {
     .then(Entries => res.render('home', {Entries}));
 })
 
+app.delete('/:id', (req,res) => {
+    const {id} = req.params;
+
+    Entry.findById(id)
+    .then(result => {
+        if (result) Entry.findByIdAndDelete(id).then(() => {
+            console.log("deleted item with id" + id);
+            }
+        );
+    });
+
+    Favourite.findById(id)
+    .then(result => {
+        if (result) Favourite.findByIdAndDelete(id).then(() => {
+            console.log("deleted item with id" + id);
+        });
+    });
+})
+
 app.get('/upload', (req, res) => {
     res.render('upload');
 })
