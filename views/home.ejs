@@ -54,6 +54,7 @@
                 .then(res => {
                     if (!res.ok) console.log("delete failed for " + id);
                     window.location.href = "/";
+                    window.location.reload(true);
                 })
             }
 
@@ -62,6 +63,7 @@
                 .then(res => {
                     if (!res.ok) console.log("delete failed for " + id);
                     window.location.href = "/";
+                    window.location.reload(true);
                 })
             }
         }

@@ -66,3 +66,11 @@ app.post('/liked', (req,res) => {
     .then(() => res.redirect('/liked'))
     .catch(err => console.log(err));
 });
+
+app.get('/search', (req, res) => {
+    const name = req.query.name;
+    if(!name) res.status(400).send('bad request. missing name');
+
+    Entry.find({ $or: [{ name: name }, { name: new RegExp(name, "i") }] })
+    .then(Entries => res.render('home', {Entries}));
+})
