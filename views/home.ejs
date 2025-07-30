@@ -44,7 +44,7 @@
                 },
                 body: JSON.stringify(uploadObject)
             })
-            .then(res => console.log("successfully uploaded"))
+            .then(res => window.location.href = '/liked')
             .catch(err => console.log(err));
         }
 
