@@ -1,12 +1,12 @@
 <nav>
     <div>
-        <img src="template_icon.png">
+        <a href="/" style="display: contents"><img src="tv.png"></a>
         <span class="nav-title">
-            Wallpapers
+            <%= title %>
         </span>
     </div>
     <div>
-        <input placeholder="Search" type="text">
+        <input placeholder="Search" type="text" onkeydown="search(event)">
         <a href="/liked"><button class="liked-button"><i class="fa-regular fa-heart"></i></button></a>
         <a href="/upload"><button class="add-button"><i class="fa-solid fa-plus"></i></button></a>
     </div>

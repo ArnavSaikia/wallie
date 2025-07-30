@@ -67,6 +67,13 @@
                 })
             }
         }
+
+        function search(e){
+            if(e.key == 'Enter'){
+                const name = e.target.value;
+                window.location.href = `/search?name=${name}`
+            }
+        }
     </script>
 </body>
 </html>

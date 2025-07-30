@@ -21,11 +21,13 @@ nav div{
 nav div img{
     height: 50%;
     margin-right: 1rem;
+    cursor: pointer;
 }
 
 nav div span{
     font-size: 1rem;
     color: #F5EBDD;
+    cursor: default;
 }
 
 nav div input{

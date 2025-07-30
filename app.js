@@ -18,7 +18,7 @@ app.use(express.static('public'));
 
 app.get('/', (req , res) => {
     Entry.find()
-    .then(Entries => res.render('home', {Entries}));
+    .then(Entries => res.render('home', {Entries, title: 'Home'}));
 })
 
 app.delete('/:id', (req,res) => {
@@ -41,7 +41,7 @@ app.delete('/:id', (req,res) => {
 })
 
 app.get('/upload', (req, res) => {
-    res.render('upload');
+    res.render('upload', {title: 'Upload An Image'});
 })
 
 app.post('/upload', (req,res) => {
@@ -55,7 +55,7 @@ app.post('/upload', (req,res) => {
 
 app.get('/liked', (req,res) => {
     Favourite.find()
-    .then(Entries => res.render('home', {Entries}));
+    .then(Entries => res.render('home', {Entries, title: "Favourites"}));
 });
 
 app.post('/liked', (req,res) => {
@@ -72,5 +72,5 @@ app.get('/search', (req, res) => {
     if(!name) res.status(400).send('bad request. missing name');
 
     Entry.find({ $or: [{ name: name }, { name: new RegExp(name, "i") }] })
-    .then(Entries => res.render('home', {Entries}));
+    .then(Entries => res.render('home', {Entries, title: 'Search Images'}));
 })
