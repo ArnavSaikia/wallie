@@ -38,6 +38,8 @@ app.delete('/:id', (req,res) => {
             console.log("deleted item with id" + id);
         });
     });
+
+    res.send("ok");
 })
 
 app.get('/upload', (req, res) => {
