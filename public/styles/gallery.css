@@ -50,12 +50,17 @@
     height: fit-content;
     font-weight: 600;
     text-align:center;
+    color: #d4d4ce; /* pastel yellow, elegant + visible */
+    text-shadow:
+        0 0 2px rgba(0, 0, 0, 0.8),
+        0 0 4px rgba(0, 0, 0, 0.6),
+        0 0 8px rgba(0, 0, 0, 0.4);
 }
 
 .card button{
     all: unset;
     background-color: rgba(59, 21, 21, 0.4); 
-    color: #E6DDCB;
+    color: #ceccc9;
     border: none;
     backdrop-filter: blur(4px); 
     padding: 0.5rem 1rem;
