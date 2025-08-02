@@ -1,13 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Entry = require('./models/entries');
+const Entry = require('./models/entries.js');
 const Favourite = require('./models/favourites.js');
+require('dotenv').config();
 
 const app = express();
 
-const dbURI = 'mongodb+srv://test-user:chinesedog555@cluster01.kyhywfy.mongodb.net/wallpaper-gallery?retryWrites=true&w=majority&appName=Cluster01';
-mongoose.connect(dbURI)
-.then(() => app.listen(3000))
+// const dbURI = 'mongodb+srv://test-user:chinesedog555@cluster01.kyhywfy.mongodb.net/wallpaper-gallery?retryWrites=true&w=majority&appName=Cluster01';
+mongoose.connect(process.env.MONGO_URI)
+.then(() => app.listen(process.env.PORT || 3000))
 .catch(err => console.log(err));
 
 
