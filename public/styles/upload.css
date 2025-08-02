@@ -8,6 +8,7 @@
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .upload-body img{
@@ -53,4 +54,29 @@
 .form button:hover {
     cursor: pointer;
   background-color: #9C8754;
+}
+
+
+@media(max-width: 480px){
+    .upload-body{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .upload-body img{
+        width: 70%;
+        aspect-ratio: 9/16;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .upload-body{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .upload-body img{
+        width: 50%;
+        aspect-ratio: 9/16;
+    }
 }

@@ -92,7 +92,7 @@
     .gallery-body{
         /* flex-direction: column;
         align-items: center; */
-        /* align-items: start; */
+        align-content: flex-start;
     }
 
     .card{
@@ -114,4 +114,8 @@
     height: auto;
     aspect-ratio: 9/16;
   }
+
+  .gallery-body{
+        align-content: flex-start;
+    }
 }
